@@ -1,0 +1,156 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "projection": {
+    "type": "mercator"
+  },
+  "height": 310,
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#DDE5E1",
+        "stroke": "white",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "state": "NSW",
+            "city": "Sydney",
+            "longitude": 151.21,
+            "latitude": -33.87,
+            "change": 3.4,
+            "magnitude": 3.4
+          },
+          {
+            "state": "VIC",
+            "city": "Melbourne",
+            "longitude": 144.96,
+            "latitude": -37.81,
+            "change": 0.9,
+            "magnitude": 0.9
+          },
+          {
+            "state": "QLD",
+            "city": "Brisbane",
+            "longitude": 153.03,
+            "latitude": -27.47,
+            "change": 1.9,
+            "magnitude": 1.9
+          },
+          {
+            "state": "SA",
+            "city": "Adelaide",
+            "longitude": 138.6,
+            "latitude": -34.93,
+            "change": 3.6,
+            "magnitude": 3.6
+          },
+          {
+            "state": "WA",
+            "city": "Perth",
+            "longitude": 115.86,
+            "latitude": -31.95,
+            "change": 2.6,
+            "magnitude": 2.6
+          },
+          {
+            "state": "TAS",
+            "city": "Hobart",
+            "longitude": 147.33,
+            "latitude": -42.88,
+            "change": -0.6,
+            "magnitude": 0.6
+          },
+          {
+            "state": "NT",
+            "city": "Darwin",
+            "longitude": 130.84,
+            "latitude": -12.46,
+            "change": 1.1,
+            "magnitude": 1.1
+          },
+          {
+            "state": "ACT",
+            "city": "Canberra",
+            "longitude": 149.13,
+            "latitude": -35.28,
+            "change": 4.2,
+            "magnitude": 4.2
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.85,
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "magnitude",
+          "type": "quantitative",
+          "title": "Absolute transport change (%)",
+          "scale": {
+            "range": [
+              65,
+              1100
+            ]
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.change >= 0",
+            "value": "#287A78"
+          },
+          "value": "#BD6470"
+        },
+        "tooltip": [
+          {
+            "field": "state"
+          },
+          {
+            "field": "city"
+          },
+          {
+            "field": "change",
+            "title": "Transport change (%)"
+          }
+        ]
+      }
+    }
+  ]
+}
