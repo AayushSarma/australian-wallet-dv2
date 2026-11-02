@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "url": "data/national_series.csv"
+  },
+  "transform": [
+    {
+      "calculate": "year(datum.date)",
+      "as": "year"
+    },
+    {
+      "calculate": "month(datum.date)",
+      "as": "mon"
+    }
+  ],
+  "height": 110,
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "mon",
+      "type": "ordinal",
+      "title": "Calendar month (Jan\u2013Dec)",
+      "sort": "ascending",
+      "axis": {
+        "labelExpr": "['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][datum.value]"
+      }
+    },
+    "y": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "sort": "descending"
+    },
+    "color": {
+      "field": "monthly",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "redblue",
+        "domainMid": 0
+      },
+      "title": "Monthly change (%)"
+    },
+    "tooltip": [
+      {
+        "field": "month"
+      },
+      {
+        "field": "monthly",
+        "title": "Monthly change (%)"
+      }
+    ]
+  }
+}

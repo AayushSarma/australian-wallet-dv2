@@ -1,0 +1,94 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "url": "data/category_months.csv"
+  },
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "change",
+          "order": "descending"
+        }
+      ],
+      "groupby": [
+        "month"
+      ]
+    }
+  ],
+  "height": 300,
+  "mark": {
+    "type": "line",
+    "point": true,
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "month",
+      "type": "ordinal",
+      "sort": [
+        "Jun 2026",
+        "Jul 2026",
+        "Aug 2026"
+      ],
+      "title": null
+    },
+    "y": {
+      "field": "rank",
+      "type": "ordinal",
+      "scale": {
+        "reverse": true
+      },
+      "title": "Ranking by monthly change"
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "legend": {
+        "orient": "bottom",
+        "columns": 3
+      }
+    },
+    "detail": {
+      "field": "category"
+    },
+    "tooltip": [
+      {
+        "field": "category"
+      },
+      {
+        "field": "month"
+      },
+      {
+        "field": "rank"
+      },
+      {
+        "field": "change",
+        "type": "quantitative",
+        "title": "Month-on-month spending change (%)"
+      }
+    ]
+  }
+}

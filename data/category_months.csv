@@ -1,0 +1,28 @@
+category,month,monthIndex,change
+Food,Jun 2026,0,0.3
+Food,Jul 2026,1,0.9
+Food,Aug 2026,2,-0.3
+Alcohol and tobacco,Jun 2026,0,0.9
+Alcohol and tobacco,Jul 2026,1,1.1
+Alcohol and tobacco,Aug 2026,2,-1
+Clothing and footwear,Jun 2026,0,-0.6
+Clothing and footwear,Jul 2026,1,1.5
+Clothing and footwear,Aug 2026,2,-1
+Furnishings,Jun 2026,0,0.5
+Furnishings,Jul 2026,1,0.3
+Furnishings,Aug 2026,2,-0.6
+Health,Jun 2026,0,0.5
+Health,Jul 2026,1,1.2
+Health,Aug 2026,2,-0.9
+Transport,Jun 2026,0,3.5
+Transport,Jul 2026,1,0.5
+Transport,Aug 2026,2,2.3
+Recreation and culture,Jun 2026,0,1.4
+Recreation and culture,Jul 2026,1,1.7
+Recreation and culture,Aug 2026,2,-1.4
+Cafes and restaurants,Jun 2026,0,0.1
+Cafes and restaurants,Jul 2026,1,1.1
+Cafes and restaurants,Aug 2026,2,0.8
+Miscellaneous,Jun 2026,0,-0.4
+Miscellaneous,Jul 2026,1,1.3
+Miscellaneous,Aug 2026,2,0.3

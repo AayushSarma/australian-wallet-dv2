@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "url": "data/cpi.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.city === 'Australia'"
+    }
+  ],
+  "height": 290,
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3,
+    "color": "#C27B45"
+  },
+  "encoding": {
+    "y": {
+      "field": "category",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "x": {
+      "field": "annual",
+      "type": "quantitative",
+      "title": "Annual price inflation (%)"
+    },
+    "tooltip": [
+      {
+        "field": "category"
+      },
+      {
+        "field": "annual",
+        "title": "Annual inflation (%)"
+      }
+    ]
+  }
+}

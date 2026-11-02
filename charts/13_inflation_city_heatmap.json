@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "url": "data/cpi.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.city !== 'Australia'"
+    }
+  ],
+  "height": 280,
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "city",
+      "type": "ordinal",
+      "sort": [
+        "Sydney",
+        "Melbourne",
+        "Brisbane",
+        "Adelaide",
+        "Perth",
+        "Hobart",
+        "Darwin",
+        "Canberra"
+      ],
+      "title": null,
+      "axis": {
+        "labelAngle": -35
+      }
+    },
+    "y": {
+      "field": "category",
+      "type": "nominal",
+      "title": null
+    },
+    "color": {
+      "field": "annual",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "goldred"
+      },
+      "title": "Annual inflation (%)"
+    },
+    "tooltip": [
+      {
+        "field": "city"
+      },
+      {
+        "field": "category"
+      },
+      {
+        "field": "annual",
+        "title": "Annual inflation (%)"
+      }
+    ]
+  }
+}

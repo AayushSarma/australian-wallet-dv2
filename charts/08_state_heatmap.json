@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "url": "data/state_spending.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.category !== 'Total'"
+    }
+  ],
+  "height": 290,
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "abbr",
+      "type": "ordinal",
+      "sort": [
+        "NSW",
+        "VIC",
+        "QLD",
+        "SA",
+        "WA",
+        "TAS",
+        "NT",
+        "ACT"
+      ],
+      "title": "State or territory"
+    },
+    "y": {
+      "field": "category",
+      "type": "nominal",
+      "title": null
+    },
+    "color": {
+      "field": "change",
+      "type": "quantitative",
+      "scale": {
+        "domainMid": 0,
+        "scheme": "redblue"
+      },
+      "title": "Change (%)"
+    },
+    "tooltip": [
+      {
+        "field": "state"
+      },
+      {
+        "field": "category"
+      },
+      {
+        "field": "change",
+        "type": "quantitative",
+        "title": "Month-on-month spending change (%)"
+      }
+    ]
+  }
+}

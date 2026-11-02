@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "values": [
+      {
+        "category": "Housing",
+        "share": 20,
+        "start": 0,
+        "end": 20
+      },
+      {
+        "category": "Food",
+        "share": 17,
+        "start": 20,
+        "end": 37
+      },
+      {
+        "category": "Transport",
+        "share": 15,
+        "start": 37,
+        "end": 52
+      },
+      {
+        "category": "Other categories",
+        "share": 48,
+        "start": 52,
+        "end": 100
+      }
+    ]
+  },
+  "height": 95,
+  "mark": {
+    "type": "rect",
+    "stroke": "#F7F3EB",
+    "strokeWidth": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "start",
+      "type": "quantitative",
+      "axis": null
+    },
+    "x2": {
+      "field": "end"
+    },
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "scale": {
+        "range": [
+          "#286F73",
+          "#C88C52",
+          "#6C7695",
+          "#B6B7A8"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "category"
+      },
+      {
+        "field": "share",
+        "title": "Share (%)"
+      }
+    ]
+  }
+}

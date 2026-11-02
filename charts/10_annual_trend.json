@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "url": "data/national_series.csv"
+  },
+  "height": 250,
+  "mark": {
+    "type": "area",
+    "line": {
+      "color": "#287A78"
+    },
+    "color": "#D0E4DE",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null
+    },
+    "y": {
+      "field": "annual",
+      "type": "quantitative",
+      "scale": {
+        "zero": true
+      },
+      "title": "Change from same month last year (%)"
+    },
+    "tooltip": [
+      {
+        "field": "month"
+      },
+      {
+        "field": "annual",
+        "title": "Annual change (%)"
+      }
+    ]
+  }
+}

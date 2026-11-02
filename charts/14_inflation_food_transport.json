@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "url": "data/cpi.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.city !== 'Australia'"
+    },
+    {
+      "pivot": "category",
+      "value": "annual",
+      "groupby": [
+        "city"
+      ]
+    }
+  ],
+  "height": 260,
+  "mark": {
+    "type": "circle",
+    "filled": true,
+    "size": 130,
+    "color": "#287A78"
+  },
+  "encoding": {
+    "x": {
+      "field": "Food",
+      "type": "quantitative",
+      "title": "Food inflation (%)",
+      "scale": {
+        "zero": false
+      }
+    },
+    "y": {
+      "field": "Transport",
+      "type": "quantitative",
+      "title": "Transport inflation (%)",
+      "scale": {
+        "zero": false
+      }
+    },
+    "tooltip": [
+      {
+        "field": "city"
+      },
+      {
+        "field": "Food"
+      },
+      {
+        "field": "Transport"
+      }
+    ]
+  }
+}

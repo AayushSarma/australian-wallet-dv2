@@ -1,0 +1,111 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -27
+    ],
+    "scale": 650
+  },
+  "height": 310,
+  "transform": [
+    {
+      "calculate": "datum.properties.STATE_NAME",
+      "as": "state"
+    },
+    {
+      "lookup": "state",
+      "from": {
+        "data": {
+          "values": [
+            {
+              "state": "New South Wales",
+              "value": 0.3
+            },
+            {
+              "state": "Victoria",
+              "value": -0.4
+            },
+            {
+              "state": "Queensland",
+              "value": 0.3
+            },
+            {
+              "state": "South Australia",
+              "value": 0.1
+            },
+            {
+              "state": "Western Australia",
+              "value": -0.2
+            },
+            {
+              "state": "Tasmania",
+              "value": -0.5
+            },
+            {
+              "state": "Northern Territory",
+              "value": 0.1
+            },
+            {
+              "state": "Australian Capital Territory",
+              "value": -0.5
+            }
+          ]
+        },
+        "key": "state",
+        "fields": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "color": {
+      "field": "value",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "redblue",
+        "domainMid": 0
+      },
+      "title": "Monthly change (%)"
+    },
+    "tooltip": [
+      {
+        "field": "state"
+      },
+      {
+        "field": "value",
+        "title": "Total change (%)"
+      }
+    ]
+  }
+}

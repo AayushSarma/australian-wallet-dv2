@@ -1,0 +1,81 @@
+state,abbr,category,change
+New South Wales,NSW,Food,-0.3
+Victoria,VIC,Food,-0.7
+Queensland,QLD,Food,0.1
+South Australia,SA,Food,-0.2
+Western Australia,WA,Food,0
+Tasmania,TAS,Food,-0.7
+Northern Territory,NT,Food,-0.1
+Australian Capital Territory,ACT,Food,-0.2
+New South Wales,NSW,Alcohol and tobacco,-0.2
+Victoria,VIC,Alcohol and tobacco,-1.3
+Queensland,QLD,Alcohol and tobacco,-1.8
+South Australia,SA,Alcohol and tobacco,-0.6
+Western Australia,WA,Alcohol and tobacco,-1.7
+Tasmania,TAS,Alcohol and tobacco,0.1
+Northern Territory,NT,Alcohol and tobacco,-1.9
+Australian Capital Territory,ACT,Alcohol and tobacco,-1
+New South Wales,NSW,Clothing and footwear,-1.3
+Victoria,VIC,Clothing and footwear,-1.4
+Queensland,QLD,Clothing and footwear,-0.7
+South Australia,SA,Clothing and footwear,-0.5
+Western Australia,WA,Clothing and footwear,0.7
+Tasmania,TAS,Clothing and footwear,-2.1
+Northern Territory,NT,Clothing and footwear,-0.9
+Australian Capital Territory,ACT,Clothing and footwear,-0.8
+New South Wales,NSW,Furnishings,-0.4
+Victoria,VIC,Furnishings,-1.3
+Queensland,QLD,Furnishings,-0.3
+South Australia,SA,Furnishings,-0.6
+Western Australia,WA,Furnishings,-0.1
+Tasmania,TAS,Furnishings,0.1
+Northern Territory,NT,Furnishings,-1.6
+Australian Capital Territory,ACT,Furnishings,-1.5
+New South Wales,NSW,Health,-0.1
+Victoria,VIC,Health,-0.4
+Queensland,QLD,Health,-0.4
+South Australia,SA,Health,-1.5
+Western Australia,WA,Health,-4
+Tasmania,TAS,Health,0.7
+Northern Territory,NT,Health,4.4
+Australian Capital Territory,ACT,Health,-4.2
+New South Wales,NSW,Transport,3.4
+Victoria,VIC,Transport,0.9
+Queensland,QLD,Transport,1.9
+South Australia,SA,Transport,3.6
+Western Australia,WA,Transport,2.6
+Tasmania,TAS,Transport,-0.6
+Northern Territory,NT,Transport,1.1
+Australian Capital Territory,ACT,Transport,4.2
+New South Wales,NSW,Recreation and culture,-1.9
+Victoria,VIC,Recreation and culture,-1.1
+Queensland,QLD,Recreation and culture,-0.7
+South Australia,SA,Recreation and culture,-2
+Western Australia,WA,Recreation and culture,-1.5
+Tasmania,TAS,Recreation and culture,-0.4
+Northern Territory,NT,Recreation and culture,-2.9
+Australian Capital Territory,ACT,Recreation and culture,-2.3
+New South Wales,NSW,Cafes and restaurants,1.6
+Victoria,VIC,Cafes and restaurants,0.2
+Queensland,QLD,Cafes and restaurants,1
+South Australia,SA,Cafes and restaurants,0.6
+Western Australia,WA,Cafes and restaurants,0
+Tasmania,TAS,Cafes and restaurants,-0.6
+Northern Territory,NT,Cafes and restaurants,1.3
+Australian Capital Territory,ACT,Cafes and restaurants,-0.6
+New South Wales,NSW,Miscellaneous,-0.2
+Victoria,VIC,Miscellaneous,0.2
+Queensland,QLD,Miscellaneous,1.7
+South Australia,SA,Miscellaneous,0.8
+Western Australia,WA,Miscellaneous,0.1
+Tasmania,TAS,Miscellaneous,-1.7
+Northern Territory,NT,Miscellaneous,0.7
+Australian Capital Territory,ACT,Miscellaneous,-1.8
+New South Wales,NSW,Total,0.3
+Victoria,VIC,Total,-0.4
+Queensland,QLD,Total,0.3
+South Australia,SA,Total,0.1
+Western Australia,WA,Total,-0.2
+Tasmania,TAS,Total,-0.5
+Northern Territory,NT,Total,0.1
+Australian Capital Territory,ACT,Total,-0.5

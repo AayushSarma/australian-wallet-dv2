@@ -1,0 +1,146 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": null,
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Arial",
+      "titleFont": "Arial",
+      "gridColor": "#E6E7E2"
+    },
+    "legend": {
+      "labelFont": "Arial",
+      "titleFont": "Arial"
+    }
+  },
+  "width": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -27
+    ],
+    "scale": 650
+  },
+  "height": 310,
+  "transform": [
+    {
+      "calculate": "datum.properties.STATE_NAME",
+      "as": "state"
+    },
+    {
+      "lookup": "state",
+      "from": {
+        "data": {
+          "values": [
+            {
+              "state": "New South Wales",
+              "pair": "Food down / Health down",
+              "food": -0.3,
+              "health": -0.1
+            },
+            {
+              "state": "Victoria",
+              "pair": "Food down / Health down",
+              "food": -0.7,
+              "health": -0.4
+            },
+            {
+              "state": "Queensland",
+              "pair": "Food up / Health down",
+              "food": 0.1,
+              "health": -0.4
+            },
+            {
+              "state": "South Australia",
+              "pair": "Food down / Health down",
+              "food": -0.2,
+              "health": -1.5
+            },
+            {
+              "state": "Western Australia",
+              "pair": "Food up / Health down",
+              "food": 0,
+              "health": -4
+            },
+            {
+              "state": "Tasmania",
+              "pair": "Food down / Health up",
+              "food": -0.7,
+              "health": 0.7
+            },
+            {
+              "state": "Northern Territory",
+              "pair": "Food down / Health up",
+              "food": -0.1,
+              "health": 4.4
+            },
+            {
+              "state": "Australian Capital Territory",
+              "pair": "Food down / Health down",
+              "food": -0.2,
+              "health": -4.2
+            }
+          ]
+        },
+        "key": "state",
+        "fields": [
+          "pair",
+          "food",
+          "health"
+        ]
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "color": {
+      "field": "pair",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Food down / Health down",
+          "Food down / Health up",
+          "Food up / Health down",
+          "Food up / Health up"
+        ],
+        "range": [
+          "#B7B7B4",
+          "#C78060",
+          "#6B80B8",
+          "#3B7776"
+        ]
+      },
+      "legend": {
+        "title": "Monthly spending direction",
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "state"
+      },
+      {
+        "field": "food",
+        "title": "Food change (%)"
+      },
+      {
+        "field": "health",
+        "title": "Health change (%)"
+      }
+    ]
+  }
+}
