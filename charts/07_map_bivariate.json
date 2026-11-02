@@ -121,7 +121,7 @@
       },
       "legend": {
         "title": "Monthly spending direction",
-        "orient": "bottom"
+        "orient": "right"
       }
     },
     "tooltip": [
